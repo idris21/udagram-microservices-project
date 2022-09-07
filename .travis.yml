@@ -29,7 +29,7 @@ script:
 
 after_success:
     # pushing docker images to dockerhub repositories
-  - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push idris21/udagram-api-feed:v1
   - docker push idris21/udagram-api-user:v1
   - docker push idris21/udagram-frontend:v1
