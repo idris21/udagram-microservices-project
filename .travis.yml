@@ -22,18 +22,18 @@ script:
   - docker build -t reverseproxy ./udagram-reverseproxy
 
     # Tagging docker images with their respective repositories tag
-  - docker tag udagram-api-feed idris21/udagram-api-feed:v3
-  - docker tag udagram-api-user idris21/udagram-api-user:v3
-  - docker tag udagram-frontend idris21/udagram-frontend:v3
-  - docker tag reverseproxy idris21/reverseproxy:v3
+  - docker tag udagram-api-feed idris21/udagram-api-feed:v4
+  - docker tag udagram-api-user idris21/udagram-api-user:v4
+  - docker tag udagram-frontend idris21/udagram-frontend:v4
+  - docker tag reverseproxy idris21/reverseproxy:v4
 
 after_success:
     # pushing docker images to dockerhub repositories
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push idris21/udagram-api-feed:v3
-  - docker push idris21/udagram-api-user:v3
-  - docker push idris21/udagram-frontend:v3
-  - docker push idris21/reverseproxy:v3
+  - docker push idris21/udagram-api-feed:v4
+  - docker push idris21/udagram-api-user:v4
+  - docker push idris21/udagram-frontend:v4
+  - docker push idris21/reverseproxy:v4
 
 
   
