@@ -7,5 +7,5 @@ data:
   POSTGRES_DB: udagramdev
   AWS_BUCKET: udagram-9802702747-dev
   AWS_REGION: us-east-1
-  URL: 10.100.26.126:8080
+  URL: localhost:8081
 
