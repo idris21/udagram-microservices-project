@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: udagram-frontend
   template:
-    metadata:
+    metadata: 
       labels:
         app: udagram-frontend
     spec:
