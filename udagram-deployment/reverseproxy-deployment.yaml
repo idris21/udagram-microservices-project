@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reverseproxy-deployment
+  labels:
+    app: reverseproxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reverseproxy
+  template:
+    metadata:
+      labels:
+        app: reverseproxy
+    spec:
+      containers:
+      - name: reverseproxy
+        image: idris21/reverseproxy:v1
+        envFrom:
+        - configMapRef:
+            name: env-configmap
+        - secretRef:
+            name: env-secret
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
